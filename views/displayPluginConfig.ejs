@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="author" content="Runc" />
+    <title><%= title %></title>
+    <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/user/user.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <div class="editNav">
+        <a href="/user/configureGroup/pluginConfig?groupId=<%- groupId %>" class="waves-effect"><i class="material-icons">arrow_back</i></a>
+        <font><%= navtitle %></font>
+    </div>
+    <div class="displayTableContainer">
+        <table class="striped centered">
+            <thead>
+                <tr>
+                    <% columns.forEach((item) => { %>
+                        <th><%= item.alias %></th>
+                    <% }); %>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((item) => { %>
+                <tr>
+                    <% columns.forEach((column) => { %>
+                        <% if(column.type == "select"){ %>
+                            <td><%= column.option[item[column.name]] %></td>
+                        <% }else if(column.type == "input"){ %>
+                            <td><%- item[column.name].replace(/\n/g, "<br>") %></td>
+                        <% } %>
+                    <% }); %>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/user/pluginconfig.js"></script>
+</body>
+
+</html>

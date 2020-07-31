@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="author" content="Runc" />
+    <title><%= title %></title>
+    <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/user/user.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <div class="editNav">
+        <a href="/user/configureGroup?groupId=<%- groupId %>" class="waves-effect"><i class="material-icons">arrow_back</i></a>
+        <font><%= navtitle %></font>
+    </div>
+    <div class="statusContaniner">
+        <div class="statusCard">
+			<div class="statusCardTitle"><%= groupName %></div>
+			<div class="progressBarSection">
+				<div class="progressLabel">昨日群内消息量</div>
+				<div class="progressBar">
+					<div class="progressBar filled"></div>
+				</div>
+				<div class="progressData"><%= data.capacityYesterday %></div>
+			</div>
+			<div class="progressBarSection">
+				<div class="progressLabel">今日群内消息量</div>
+				<div class="progressBar">
+					<div class="progressBar filled"></div>
+				</div>
+				<div class="progressData"><%= data.capacityToday %></div>
+			</div>
+		</div>
+    </div>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/user/status.js"></script>
+</body>
+
+</html>

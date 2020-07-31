@@ -1,0 +1,137 @@
+body {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.top-panel {
+    position: fixed;
+    background-color: #0277BD;
+    height: 38.2%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.panel-icon {
+    position: absolute;
+    bottom: 64px;
+    right: 20px;
+    color: white;
+}
+
+.panel-icon > i {
+    position: relative;
+    font-size: 192px;
+    bottom: -50px;
+}
+
+.panel-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    line-height: 64px;
+    padding: 0 0 0 20px;
+    letter-spacing: 4px;
+    user-select: none;
+    z-index: 1;
+    background-color: #004C8C;
+}
+
+.card-content {
+    display: grid;
+    place-content: center center;
+    position: fixed;
+    height: calc(61.8% - 48px);
+    width: 100%;
+    top: 38.2%;
+    grid-template-columns: 100%;
+    grid-template-rows: 64px calc(100% - 64px);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 64px;
+}
+
+.card-text {
+    color: gray;
+    padding: 0 20px;
+}
+
+.verification {
+    display: grid;
+    width: 100%;
+    padding: 0 20px 0 20px;
+    grid-template-columns: calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px);
+    grid-gap: 4px;
+    place-content: start center;
+    padding: 50px 20px 50px 20px;
+}
+
+.verification > .code {
+    height: 50px;
+    line-height: 46px;
+    width: 100%;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px dashed rgba(0,0,0,0.2);
+}
+
+.next-button {
+    position: fixed;
+    bottom: 0;
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    background-color: #58a5ef;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-button.disabled {
+    background-color: darkgray;
+    cursor: not-allowed;
+}
+
+.selection {
+    display: grid;
+    color: black;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    place-items: center center;
+    grid-template-columns: 64px calc(100% - 64px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.selection > i {
+    display: inline-block;
+    font-size: 24px;
+    padding: 3px 0 0 0;
+}
+
+.selection > font {
+    display: inline-block;
+    place-self: center start;
+    /* font-weight: bold; */
+}

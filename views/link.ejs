@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+  <meta name="author" content="Runc" />
+  <title><%= title %></title>
+  <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="/css/auth/link.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+  <div class="top-panel">
+    <div class="panel-icon"><i class="material-icons">settings_ethernet</i></div>
+    <div class="panel-title">连接到老人机</div>
+  </div>
+  <div class="card-content">
+    <div class="card-title">身份验证</div>
+    <div class="card-text">我们需要一次性身份令牌来识别您的身份，请使用您的QQ帐号向任意老人机私聊发送"#生成令牌"，并将老人机的回复粘贴到下面的文本框内。</div>
+    <div class="row" style="margin: 0;padding: 0 15px;">
+      <div class="input-field col s12">
+        <textarea id="token" class="materialize-textarea"></textarea>
+        <label for="token">身份令牌</label>
+      </div>
+    </div>
+  </div>
+  <div class="next-button disabled">请输入身份令牌</div>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/auth/link.js"></script>
+</body>
+</html>

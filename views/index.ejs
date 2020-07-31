@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+  <meta name="author" content="Runc" />
+  <title><%= title %></title>
+  <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="/css/index.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+  <div class="top-panel">
+    <div class="panel-icon"><i class="material-icons"><%= userNickname ? `how_to_reg` : `psychology` %></i></div>
+    <div class="panel-title">欢迎使用老人机</div>
+  </div>
+  <div class="card-content">
+    <div class="card-title"><%= userNickname ? `您好，${userNickname}` : `访客模式` %></div>
+    <div class="row" style="margin: 0;padding: 0 15px;">
+      <% if(userNickname){ %>
+      <a class="selection waves-effect"><i class="material-icons">shopping_cart</i>
+        <font>购买授权</font>
+      </a>
+      <a class="selection waves-effect"><i class="material-icons">receipt_long</i>
+        <font>授权记录</font>
+      </a>
+      <a class="selection waves-effect" href="/user"><i class="material-icons">developer_board</i>
+        <font>控制面板</font>
+      </a>
+      <a class="selection waves-effect" href="/help"><i class="material-icons">help</i>
+        <font>使用说明</font>
+      </a>
+      <a class="selection waves-effect" id="support" href="mqqwpa://im/chat?chat_type=wpa&uin=814537405&version=1&src_type=web"><i class="material-icons">support</i>
+        <font>联系支持</font>
+      </a>
+      <a class="selection waves-effect" href="/auth/logout"><i class="material-icons">exit_to_app</i>
+        <font>退出登录</font>
+      </a>
+      <% } else { %>
+        <a class="selection waves-effect" href="/auth/link"><i class="material-icons">settings_ethernet</i>
+          <font>连接到帐号</font>
+        </a>
+      <a class="selection waves-effect" href="/help"><i class="material-icons">help</i>
+        <font>使用说明</font>
+      </a>
+      <a class="selection waves-effect" id="support" href="mqqwpa://im/chat?chat_type=wpa&uin=814537405&version=1&src_type=web"><i class="material-icons">support</i>
+        <font>联系支持</font>
+      </a>
+      <% } %>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>

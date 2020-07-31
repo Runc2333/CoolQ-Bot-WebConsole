@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="author" content="Runc" />
+    <title><%= title %></title>
+    <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/user/user.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <div class="top-panel">
+        <div class="panel-icon"><i class="material-icons">extension</i></div>
+        <div class="panel-title"><%= groupName %></div>
+    </div>
+    <div class="card-content">
+        <div class="card-title">启用/停用插件</div>
+        <div class="row" style="margin: 0;padding: 0 15px;overflow: auto;">
+            <% plugins.forEach((plugin) => { %>
+                <div class="switchBox waves-effect" forp="<%- plugin.plugin %>">
+                    <div class="title"><%= plugin.alias !== '' ? plugin.alias : plugin.plugin %></div>
+                    <div class="description"><%= plugin.description !== '' ? plugin.description : '无描述' %></div>
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" id="<%- plugin.plugin %>"<%- pluginState[plugin.plugin] == 1 ? ' checked' : '' %>>
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+            <% }); %>
+            <a class="selection waves-effect" href="/user/configureGroup?groupId=<%- groupId %>"><i class="material-icons">arrow_back</i>
+                <font>返回</font>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/user/pluginswitch.js"></script>
+</body>
+
+</html>

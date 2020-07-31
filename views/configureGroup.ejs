@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="author" content="Runc" />
+    <title><%= title %></title>
+    <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/user/user.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <div class="top-panel">
+        <div class="panel-icon"><i class="material-icons">engineering</i></div>
+        <div class="panel-title"><%= groupName %></div>
+    </div>
+    <div class="card-content">
+        <div class="card-title">选择一个选项</div>
+        <div class="row" style="margin: 0;padding: 0 15px;">
+            <a class="selection waves-effect" href="/user/configureGroup/status?groupId=<%- groupId %>"><i class="material-icons">multiline_chart</i>
+                <font>运行状态</font>
+            </a>
+            <a class="selection waves-effect"><i class="material-icons">local_police</i>
+                <font>授权管理</font>
+            </a>
+            <a class="selection waves-effect" href="/user/configureGroup/pluginSwitch?groupId=<%- groupId %>"><i
+                    class="material-icons">extension</i>
+                <font>启用/禁用插件</font>
+            </a>
+            <a class="selection waves-effect" href="/user/configureGroup/pluginConfig?groupId=<%- groupId %>"><i
+                    class="material-icons">rule</i>
+                <font>调整插件设置</font>
+            </a>
+            <a class="selection waves-effect" href="/user"><i class="material-icons">arrow_back</i>
+                <font>返回</font>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/user/user.js"></script>
+</body>
+
+</html>

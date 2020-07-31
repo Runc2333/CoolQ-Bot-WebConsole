@@ -1,0 +1,402 @@
+body {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.top-panel {
+    position: fixed;
+    background-color: #0277BD;
+    height: 38.2%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.panel-icon {
+    position: absolute;
+    bottom: 64px;
+    right: 20px;
+    color: white;
+}
+
+.panel-icon > i {
+    position: relative;
+    font-size: 192px;
+    bottom: -50px;
+}
+
+.panel-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    line-height: 64px;
+    padding: 0 0 0 20px;
+    letter-spacing: 4px;
+    user-select: none;
+    z-index: 1;
+    background-color: #004C8C;
+}
+
+.card-content {
+    display: grid;
+    place-content: center center;
+    position: fixed;
+    height: calc(61.8% - 48px);
+    width: 100%;
+    top: 38.2%;
+    grid-template-columns: 100%;
+    grid-template-rows: 64px calc(100% - 64px);
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 64px;
+}
+
+.card-text {
+    color: gray;
+    padding: 0 20px;
+}
+
+.verification {
+    display: grid;
+    width: 100%;
+    grid-template-columns: calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px) calc(16.6% - 6px);
+    grid-gap: 4px;
+    place-content: start center;
+    padding: 50px 20px 50px 20px;
+}
+
+.verification > .code {
+    height: 50px;
+    line-height: 46px;
+    width: 100%;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px dashed rgba(0,0,0,0.2);
+}
+
+.next-button {
+    position: fixed;
+    bottom: 0;
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    background-color: #58a5ef;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-button.disabled {
+    background-color: darkgray;
+    cursor: not-allowed;
+}
+
+.selection {
+    display: grid;
+    color: black;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    place-items: center center;
+    grid-template-columns: 64px calc(100% - 64px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.selection > i {
+    display: inline-block;
+    font-size: 24px;
+    padding: 3px 0 0 0;
+}
+
+.selection > font {
+    display: inline-block;
+    place-self: center start;
+    /* font-weight: bold; */
+}
+
+.tips {
+    place-self: center center;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.tips > div {
+    font-size: 12px;
+    color: darkgray;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.switchBox {
+    display: grid;
+    grid-template-columns: calc(100% - 80px) 80px;
+    grid-template-areas: 'a c' 'b c';
+    place-items: center center;
+    padding: 5px 0 5px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.switchBox > .title {
+    font-size: 18px;
+    font-weight: bold;
+    place-self: center start;
+}
+
+.switchBox > .description {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    place-self: center start;
+}
+
+.switchBox > .switch {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.selectionBox {
+    color: black;
+    display: grid;
+    grid-template-columns: calc(100% - 80px) 80px;
+    grid-template-areas: 'a c' 'b c';
+    place-items: center center;
+    padding: 5px 0 5px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.selectionBox > .title {
+    font-size: 18px;
+    font-weight: bold;
+    place-self: center start;
+}
+
+.selectionBox > .description {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    place-self: center start;
+}
+
+.selectionBox > .icon {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-size: 32px;
+    padding: 5px 0 0 0;
+}
+
+.editNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 64px;
+    background-color: rgb(2,119,189);
+    width: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    display: grid;
+    grid-template-columns: 64px calc(100% - 64px);
+    place-items: center center;
+    color: white;
+}
+
+.editNav > a {
+    padding-top: 5px;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center center;
+    color: white;
+}
+
+.editNav > font {
+    font-size: 20px;
+    font-weight: bold;
+    place-self: center left;
+}
+
+.editCardContainer {
+    position: fixed;
+    top: 64px;
+    height: calc(100% - 64px);
+    width: 100%;
+    display: grid;
+    place-items: center center;
+}
+
+.editCard {
+    background-color: white;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    margin: 20px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    padding: 20px 10px 10px 10px;
+    max-width: 500px;
+    min-width: 250px;
+}
+
+.displayTableContainer {
+    position: fixed;
+    top: 64px;
+    height: calc(100% - 64px);
+    width: 100%;
+    display: grid;
+    place-items: center center;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.displayTableContainer > table {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.statusContaniner {
+    position: fixed;
+    top: 64px;
+    height: calc(100% - 64px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: [c1 start] 100% [c2 end];
+    align-items: center;
+    justify-items: center;
+    transition: all 0.3s ease;
+}
+
+.statusCard {
+    position: relative;
+    background-color: white;
+    transition: all 0.3s ease;
+    padding: 0 15px 15px 15px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.statusCardTitle {
+    margin: 10px;
+    min-width: 100px;
+    font-size: 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.serverStatusSection {
+    display: block;
+    height: 50px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.serverIcon {
+    display: inline-block;
+    vertical-align: top;
+    transition: all 0.3s ease;
+}
+
+.serverIcon > i {
+    transform: unset;
+    transition: all 0.3s ease;
+}
+
+.serverName {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.serverStatus {
+    display: inline-grid;
+    width: 60px;
+    height: 30px;
+    grid-template-columns: 20px 40px;
+    vertical-align: top;
+    justify-items: center;
+    align-items: center;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+.serverStatusIcon {
+    display: inline-block;
+    vertical-align: top;
+    height: 10px;
+    width: 10px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.serverStatusText {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    line-height: 30px;
+    transition: all 0.3s ease;
+}
+
+.progressBarSection {
+    height: auto;
+    padding: 10px 0 0 0;
+    transition: all 0.3s ease;
+}
+
+.progressLabel {
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.progressBar {
+    height: 10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.progressBar.filled {
+    background-color: rgb(2,119,189);
+    transition: all 0.3s ease;
+    width: 0;
+}
+
+.progressData {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    left: 0;
+    transition: all 0.3s ease;
+}

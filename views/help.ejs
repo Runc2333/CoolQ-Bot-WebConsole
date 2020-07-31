@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="author" content="Runc" />
+    <title><%= title %></title>
+    <link href="/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/project.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/help.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <div class="helpNav">
+        <a href="/" class="waves-effect"><i class="material-icons">arrow_back</i></a>
+        <font><%= navtitle %></font>
+    </div>
+    <div class="helpContainer">
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header"><i class="material-icons">whatshot</i><b>QQ炫舞爆点查询</b></div>
+                <div class="collapsible-body"><span>QQ炫舞爆点查询插件是用于快速查询歌曲爆点的插件，其包含如下两种查询模式：<br /><br /><b>普通查询</b><br />命令：[模式] [关键词]<br />[模式]：a - 星动 s - 弦月 d - 弹珠 f - 泡泡<br />例如：发送“a atlw”即可查询到星动模式“爱投罗网”的爆点信息<br />同理：发送“s atlw”即可查询到弦月模式“爱投罗网”的爆点信息<br /><br /><b>SSP模式查询</b><br />命令：[模式] [关键词]<br />[模式]：aa - SSP星动 ss - SSP弦月 dd - SSP弹珠 ff - SSP泡泡<br />例如：发送“aa atlw”即可查询到SSP星动模式“爱投罗网”的爆点信息<br />同理：发送“ss atlw”即可查询到SSP弦月模式“爱投罗网”的爆点信息<br /><br /><b>请特别注意指令中所包含的空格</b></span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">question_answer</i><b>问答系统</b></div>
+                <div class="collapsible-body"><span>问答系统是在群内侦听到包含关键词的消息后，自动发送一条预设消息的插件，通常用于自动回答有较多人问的问题。<br />本插件目前支持如下三种匹配模式：<br /><br /><b>精确匹配</b><br />收到的消息与预设的关键词<b>完全一致</b>时，才会发送预设的消息。<br />指令模板：#添加精确问答_问题_答案<br />使用示例：#添加精确问答_你是谁?_老人机！<br /><br /><b>模糊匹配</b><br />收到的消息<b>只要包含</b>预设的关键词时，就会发送预设的消息。<br />指令模板：#添加模糊问答_问题_答案<br />使用示例：#添加模糊问答_可爱_老人机最可爱！<br /><br /><b>正则匹配</b><br />收到的消息<b>可以匹配预设的正则表达式</b>时，就会发送预设的消息。<br />指令模板：#添加正则问答_正则表达式_答案<br />使用示例：#添加正则问答_^(.+?)是猪_$1才不是猪呢<br />正则匹配模式支持许多高级功能，如上的示例表达式"^(.+?)是猪"可从消息"老人机是猪"中匹配出"老人机",并在预设的答案中对其进行引用，最终发送的出的答案将会是"老人机才不是猪呢"。<br />若您还不了解正则表达式，您可通过阅读<a href="https://deerchao.cn/tutorials/regex/regex.htm">这篇文章</a>进行学习。</span><br /><br />以下介绍其他可用指令：<br /><br /><b>显示所有问答</b><br />列出当前群内设置的所有问答及其对应的ID<br />指令模板：#显示所有问答<br />使用示例：#显示所有问答<br /><br /><b>移除问答</b><br />移除一条先前设置的问答，请使用“显示所有问答”中提供的ID值来进行移除<br />指令模板：#移除问答_问答ID<br />使用示例：#移除问答_1</div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">verified</i><b>入群验证</b></div>
+                <div class="collapsible-body"><span>入群验证是向新入群的成员发送验证码图片，要求成员发送图片里的验证码后才能进行发言，以此来过滤机器人/广告号的插件。<br />群内的管理员可通过如下指令来控制插件的验证功能。<br /><br /><b>人工通过</b><br />人工通过某一成员的验证，使其无需发送验证码即可发言。<br />指令模板：#人工通过_成员QQ号<br />使用示例：#人工通过_1145141919<br /><br /><b>人工拒绝</b><br />人工拒绝某一成员的验证，该用户将被立即移出群聊。<br />指令模板：#人工拒绝_成员QQ号<br />使用示例：#人工拒绝_1145141919</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">emoji_people</i><b>入群欢迎</b></div>
+                <div class="collapsible-body"><span>入群欢迎是向新入群的成员自动发送预设消息的插件，一般用于发送群规、注意事项等消息。<br />群内的管理员可通过如下指令来配置插件：<br /><br /><b>设置欢迎语</b><br />设置向新入群成员自动发送的消息<br />指令模板：#设置欢迎语_欢迎语<br />使用示例：#设置欢迎语_欢迎新成员！<br /><br /><b>删除欢迎语</b><br />移除群内当前设置的欢迎语<br />指令模板：#删除欢迎语<br />使用示例：#删除欢迎语<br /><br /><b>显示欢迎语</b><br />显示当前群内设置的欢迎语<br />指令模板：#显示欢迎语<br />使用示例：#显示欢迎语</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">import_contacts</i><b>一言</b></div>
+                <div class="collapsible-body"><span>一言插件是<a href="https://hitokoto.cn/">Hitokoto - 一言</a>的QQ实现，用于返回一句话。<br /><br /><b>使用方式</b><br />在群内发送"一言"即可触发</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">line_style</i><b>抽签</b></div>
+                <div class="collapsible-body"><span>抽签功能用于抽取每日运势(仅供娱乐)，不限制每日抽取次数，您大可抽到自己满意的签再停下。<br /><br /><b>使用方式</b><br />在群内发送"抽签"或"占卜"即可触发</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">sync</i><b>消息同步</b></div>
+                <div class="collapsible-body"><span><font style="font-weight: bold;color: orange;font-style: italic;">测试中！</font><br /><br />消息同步插件用于同步(互相转发)两个群内的消息，从而变相绕过QQ的群人数限制。<br /><br /><b>可用指令</b><br /><br /><b>发起消息同步</b><br />指令模板：#发起消息同步_目标群号<br /><br /><b>接受同步请求</b><br />指令模板：#接受同步请求_目标群号<br /><br /><b>拒绝同步请求</b><br />指令模板：#拒绝同步请求_目标群号<br /><br /><b>中止消息同步</b><br />指令模板：#中止消息同步_目标群号<br /><br /></span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">perm_media</i><b>消息存贮器</b></div>
+                <div class="collapsible-body"><span>消息存贮器会自动保存群内的历史消息(包括文字、表情、图片、语音)以供日后搜索或查阅。<br /><br /><b>查某人记录</b><br />通过关键词(可选)查询特定用户在本群内的发言记录<br />指令模板：#查某人记录_目标用户QQ号_关键词_页数<br />使用示例：#查某人记录_1145141919_今晚排位_1<br /><br /><b>查全群记录</b><br />通过关键词查询整个群内的发言记录<br />指令模板：#查全群记录_关键词_页数<br />使用示例：#查全群记录_绝对不鸽_1<br /><br />此外，关键词字段支持使用<a href="https://docs.cqp.im/manual/cqcode/">CQ码</a></span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">burst_mode</i><b>涩图</b></div>
+                <div class="collapsible-body"><span>涩图插件用于返回一张色图(不会露点、非边缘色情)。<br /><br /><b>使用方式</b><br />在群内发送"来点色图"即可触发</span></span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">chat</i><b>聊天机器人</b></div>
+                <div class="collapsible-body"><span>聊天机器人插件是在未匹配到任何功能，但机器人被提到了的情况下做出回复的插件。<br /><br /><b>使用方式</b><br />在群内@老人机或发送以"老人机"开头或结尾的消息，并说出你想说的话即可触发聊天回复。</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">textsms</i><b>问好</b></div>
+                <div class="collapsible-body"><span>问好插件用于测试机器人是否存活。<br /><br /><b>使用方式</b><br />在群内发送"老人机"或@老人机即可触发</span></div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/help.js"></script>
+</body>
+
+</html>
